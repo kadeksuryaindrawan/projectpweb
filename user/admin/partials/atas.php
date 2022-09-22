@@ -230,6 +230,14 @@
                                   </a>
                               </li>
 
+                              <li <?php if($page == "jabatan") echo "class='active'";?>>
+                                  <a href="jabatan.php" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-user"></i><b>FC</b></span>
+                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">Jabatan</span>
+                                      <span class="pcoded-mcaret"></span>
+                                  </a>
+                              </li>
+
                               <li class="pcoded-hasmenu <?php if($pages == "jurnal") echo "active";?> <?php if($pages == "jurnal") echo "pcoded-trigger";?>">
                                   <a href="javascript:void(0)" class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="ti-book"></i></span>
@@ -251,6 +259,8 @@
                                     </li>
                                   </ul>
                               </li>
+
+                              
 
                               <li class="pcoded-hasmenu <?php if($pages == "dsn") echo "active";?> <?php if($pages == "dsn") echo "pcoded-trigger";?>">
                                   <a href="javascript:void(0)" class="waves-effect waves-dark">
@@ -274,6 +284,36 @@
                                     <li <?php if($page == "publikasi_dosen") echo "class='active'";?>>
                                         <a href="publikasi_dosen.php" class="waves-effect waves-dark">
                                             <span class="pcoded-mtext" data-i18n="nav.form-components.main">Publikasi Dosen</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                    <li <?php if($page == "produk_dosen") echo "class='active'";?>>
+                                        <a href="produk_dosen.php" class="waves-effect waves-dark">
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Produk Dosen</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                    <li <?php if($page == "kompetensi") echo "class='active'";?>>
+                                        <a href="kompetensi.php" class="waves-effect waves-dark">
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Kompetensi</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                    <li <?php if($page == "mengajar") echo "class='active'";?>>
+                                        <a href="mengajar.php" class="waves-effect waves-dark">
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Mengajar</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                    <li <?php if($page == "pembimbing_utama") echo "class='active'";?>>
+                                        <a href="pembimbing_utama.php" class="waves-effect waves-dark">
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Pembimbing Utama</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                    <li <?php if($page == "dosen_industri") echo "class='active'";?>>
+                                        <a href="dosen_industri.php" class="waves-effect waves-dark">
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Dosen Industri</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
@@ -359,5 +399,21 @@
                                       <span class="pcoded-mcaret"></span>
                                   </a>
                               </li>
+                              <li <?php if($page == "teknologi_tepat_guna") echo "class='active'";?>>
+                                  <a href="teknologi_tepat_guna.php" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-book"></i><b>FC</b></span>
+                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">Teknologi Tepat Guna</span>
+                                      <span class="pcoded-mcaret"></span>
+                                  </a>
+                              </li>
+
+                              <li <?php if($page == "ewmp") echo "class='active'";?>>
+                                  <a href="ewmp.php" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-book"></i><b>FC</b></span>
+                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">EWMP</span>
+                                      <span class="pcoded-mcaret"></span>
+                                  </a>
+                              </li>
+                              
                           </ul>          
                   </nav>

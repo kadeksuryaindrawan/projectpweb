@@ -1,6 +1,5 @@
 <?php
-$page = 'jurnal_index';
-$pages = 'jurnal';
+$page = 'jabatan';
     include "./partials/atas.php";
 ?> 
                   <div class="pcoded-content">
@@ -10,7 +9,7 @@ $pages = 'jurnal';
                               <div class="row align-items-center">
                                   <div class="col-md-8">
                                       <div class="page-header-title">
-                                          <h5 class="m-b-10">Jurnal Index</h5>
+                                          <h5 class="m-b-10">Jabatan</h5>
                                           <p class="m-b-0">Selamat datang di dashboard admin ProdiKU</p>
                                       </div>
                                   </div>
@@ -29,15 +28,15 @@ $pages = 'jurnal';
                                         <div class="col-md-12">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Tambah Jurnal Index</h5>
+                                                        <h5>Tambah Jabatan</h5>
                                                         <!--<span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>-->
                                                     </div>
                                                     <div class="card-block">
-                                                        <form class="form-material" method="POST" action="./process/tambah_jurnalindex.process.php">
+                                                        <form class="form-material" method="POST" action="./process/tambah_jabatan.process.php">
                                                             <div class="form-group form-default">
-                                                                <input type="text" name="nama_jurnalindex" class="form-control" required="">
+                                                                <input type="text" name="nama_jabatan" class="form-control" required="">
                                                                 <span class="form-bar"></span>
-                                                                <label class="float-label">Masukkan Nama Jurnal Index</label>
+                                                                <label class="float-label">Masukkan Nama Jabatan</label>
                                                             </div>
 
                                                             <input type="submit" name="submit" class="btn btn-success waves-effect waves-light" value="Tambah">
