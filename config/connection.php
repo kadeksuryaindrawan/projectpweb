@@ -4,7 +4,7 @@
 	$HOST 		= 'localhost';
 	$USERNAME	= 'root';
 	$PASSWORD	= '';
-	$DATABASE	= 'db_prodi';
+	$DATABASE	= 'aps_c4';
 
 	$connection = mysqli_connect($HOST, $USERNAME, $PASSWORD, $DATABASE);
     

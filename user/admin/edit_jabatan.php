@@ -1,7 +1,20 @@
 <?php
-$page = 'jurnal_index';
-$pages = 'jurnal';
+$page = 'jabatan';
     include "./partials/atas.php";
+    if(isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id'])){
+        $id= $_GET['id'];
+        $query_check = mysqli_query($connection, "SELECT * FROM jabatan WHERE id = $id");
+        if(mysqli_num_rows($query_check) == 1){
+          $data= mysqli_fetch_assoc($query_check);
+          
+        }
+        else{
+          header('location: ./jabatan.php');
+        }
+      }
+      else{
+        header('location: ./jabatan.php');
+      }
 ?> 
                   <div class="pcoded-content">
                       <!-- Page-header start -->
@@ -10,7 +23,7 @@ $pages = 'jurnal';
                               <div class="row align-items-center">
                                   <div class="col-md-8">
                                       <div class="page-header-title">
-                                          <h5 class="m-b-10">Jurnal Index</h5>
+                                          <h5 class="m-b-10">Jabatan</h5>
                                           <p class="m-b-0">Selamat datang di dashboard admin ProdiKU</p>
                                       </div>
                                   </div>
@@ -29,18 +42,19 @@ $pages = 'jurnal';
                                         <div class="col-md-12">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Tambah Jurnal Index</h5>
+                                                        <h5>Edit Jabatan</h5>
                                                         <!--<span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>-->
                                                     </div>
                                                     <div class="card-block">
-                                                        <form class="form-material" method="POST" action="./process/tambah_jurnalindex.process.php">
+                                                        <form class="form-material" method="POST" action="./process/edit_jabatan.process.php">
+                                                            <input type="hidden" name="id" value="<?= $id ?>">
                                                             <div class="form-group form-default">
-                                                                <input type="text" name="nama_jurnalindex" class="form-control" required="">
+                                                                <input type="text" name="nama_jabatan" class="form-control" required="" value="<?= $data['nama_jabatan'] ?>">
                                                                 <span class="form-bar"></span>
-                                                                <label class="float-label">Masukkan Nama Jurnal Index</label>
+                                                                <label class="float-label">Masukkan Nama Jabatan</label>
                                                             </div>
 
-                                                            <input type="submit" name="submit" class="btn btn-success waves-effect waves-light" value="Tambah">
+                                                            <input type="submit" name="submit" class="btn btn-success waves-effect waves-light" value="Edit">
                                                         </form>
                                                     </div>
                                                 </div>

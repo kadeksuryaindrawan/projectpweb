@@ -1,5 +1,6 @@
 <?php
 $page = 'jurnal_index';
+$pages = 'jurnal';
     include "./partials/atas.php";
     if(isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id'])){
         $id= $_GET['id'];
