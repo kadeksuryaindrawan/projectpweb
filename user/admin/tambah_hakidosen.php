@@ -83,6 +83,12 @@ $pages = 'dsn';
                                                                 <textarea name="anggota" class="form-control"></textarea>
                                                                 <span class="form-bar"></span>
                                                             </div>
+
+                                                            <div class="form-group form-default">
+                                                                <input type="text" name="jenis" class="form-control" required="">
+                                                                <span class="form-bar"></span>
+                                                                <label class="float-label">Masukkan Jenis</label>
+                                                            </div>
                                                             <input type="submit" name="submit" class="btn btn-success waves-effect waves-light" value="Tambah">
                                                         </form>
                                                     </div>

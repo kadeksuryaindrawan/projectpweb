@@ -6,10 +6,10 @@
 		extract($_POST);
         $tipe_file = $_FILES['file_sertif']['type'];
         $nama_file = $_FILES['file_sertif']['name'];
-		if(!empty($nip) && !empty($judul_haki) && !empty($tgl_terdaftar) && !empty($no_haki) && !empty($anggota)){
+		if(!empty($nip) && !empty($judul_haki) && !empty($tgl_terdaftar) && !empty($no_haki) && !empty($anggota) && !empty($jenis)){
 			if($tipe_file == "application/pdf"){
                 if($no_haki > 0){
-                    $query_insert = mysqli_query($connection,"INSERT INTO haki_dosen VALUES (NULL,'$nip','$judul_haki','$tgl_terdaftar',$no_haki,NULL,'$anggota')");
+                    $query_insert = mysqli_query($connection,"INSERT INTO haki_dosen VALUES (NULL,'$nip','$judul_haki','$tgl_terdaftar',$no_haki,NULL,'$anggota','$jenis')");
                     $query = mysqli_query($connection,"SELECT id_hakidosen FROM haki_dosen ORDER BY id_hakidosen DESC LIMIT 1");
                     $data = mysqli_fetch_assoc($query);
                     $id_hakidosen = $data['id_hakidosen'];

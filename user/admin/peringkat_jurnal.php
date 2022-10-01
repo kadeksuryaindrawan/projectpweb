@@ -40,6 +40,7 @@
                                                                 <th>No</th>
                                                                 <th>Jurnal Index</th>
                                                                 <th>Peringkat Jurnal</th>
+                                                                <th>Jenis Media Publikasi</th>
                                                                 <th>Action</th>
                                                             </tr>
                                                         </thead>
@@ -53,6 +54,7 @@
                                                                         <th scope="row"><?=$nomor++?></th>
                                                                         <td><?=strtoupper($data['nama_jurnalindex'])?></td>
                                                                         <td><?=strtoupper($data['nama_peringkatjurnal'])?></td>
+                                                                        <td><?=ucwords($data['jenis_media_publikasi'])?></td>
                                                                         <td>
                                                                         <a class="text-primary" href="./edit_peringkatjurnal.php?id=<?php echo $data['id_peringkatjurnal'] ?>"><button class="btn btn-primary waves-effect waves-light" style="margin-bottom:15px;">Edit</button></a>
                                                                         <a class="text-danger" href="./hapus_peringkatjurnal.php?id=<?php echo $data['id_peringkatjurnal'] ?>" onclick = "return confirm('Yakin hapus peringkat jurnal?')"><button class="btn btn-danger waves-effect waves-light" style="margin-bottom:15px;">Hapus</button></a>

@@ -43,6 +43,7 @@
                                                                 <th>Penerbit</th>
                                                                 <th>Tahun Terbit</th>
                                                                 <th>Status</th>
+                                                                <th>ISBN</th>
                                                                 <th>Action</th>
                                                             </tr>
                                                         </thead>
@@ -71,7 +72,7 @@
                                                                                 <?php
                                                                             }
                                                                         ?>
-                                                                        
+                                                                        <td><?=$data['isbn']?></td>
                                                                         <td>
                                                                         <a class="text-primary" href="./edit_buku.php?id=<?php echo $data['id_publikasibuku'] ?>"><button class="btn btn-primary waves-effect waves-light" style="margin-bottom:15px;">Edit</button></a>
                                                                         <a class="text-danger" href="./hapus_buku.php?id=<?php echo $data['id_publikasibuku'] ?>" onclick = "return confirm('Yakin hapus buku?')"><button class="btn btn-danger waves-effect waves-light" style="margin-bottom:15px;">Hapus</button></a>

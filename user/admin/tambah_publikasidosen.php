@@ -113,6 +113,12 @@ $pages = 'dsn';
                                                                 <span class="form-bar"></span>
                                                             </div>
 
+                                                            <div class="form-group form-default">
+                                                                <input type="number" name="jumlah_sitasi" class="form-control" required="">
+                                                                <span class="form-bar"></span>
+                                                                <label class="float-label">Masukkan Jumlah Sitasi</label>
+                                                            </div>
+
                                                             <input type="submit" name="submit" class="btn btn-success waves-effect waves-light" value="Tambah">
                                                         </form>
                                                     </div>

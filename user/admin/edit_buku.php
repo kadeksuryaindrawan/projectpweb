@@ -102,7 +102,12 @@ $page = 'pubuku';
                                                                 <span class="form-bar"></span>
                                                                 <label class="float-label">Masukkan Tahun Terbit</label>
                                                             </div>
-
+                                                            
+                                                            <div class="form-group form-default">
+                                                                <input type="number" name="isbn" class="form-control" required="" value="<?= $data['isbn'] ?>">
+                                                                <span class="form-bar"></span>
+                                                                <label class="float-label">Masukkan ISBN</label>
+                                                            </div>
                                                             <input type="submit" name="submit" class="btn btn-success waves-effect waves-light" value="Edit">
                                                         </form>
                                                     </div>

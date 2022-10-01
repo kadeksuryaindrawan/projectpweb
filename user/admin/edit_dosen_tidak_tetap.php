@@ -1,5 +1,5 @@
 <?php
-$page = 'dosen_tetap';
+$page = 'dosen_tidak_tetap';
 $pages = 'dsn';
     include "./partials/atas.php";
     if(isset($_GET['user_id']) && !empty($_GET['user_id']) && is_numeric($_GET['user_id'])){
@@ -47,7 +47,7 @@ $pages = 'dsn';
                                                         <!--<span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>-->
                                                     </div>
                                                     <div class="card-block">
-                                                    <form class="form-material" method="POST" action="./process/edit_dosen.process.php">
+                                                    <form class="form-material" method="POST" action="./process/edit_dosen_tidak_tetap.process.php">
                                                         <input type="hidden" name="user_id" value="<?= $user_id ?>">
                                                         <input type="hidden" name="nip" value="<?= $data['nip'] ?>">
                                                             <div class="form-group form-default">

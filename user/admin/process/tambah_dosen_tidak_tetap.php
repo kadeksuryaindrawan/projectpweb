@@ -21,7 +21,7 @@
 								echo"
 										<script>
 											alert('Sukses Tambah Dosen');
-											location.href = '../tambah_dosen.php';
+											location.href = '../tambah_dosen_tidak_tetap.php';
 										</script>
 									";
 						}
@@ -48,12 +48,12 @@
 		echo "
 				<script>
 					alert('$pesan');
-					location.href = '../tambah_dosen.php'
+					location.href = '../tambah_dosen_tidak_tetap.php'
 				</script>
 			";
 	}
 	else{
-		header('location: ../dosen.php');
+		header('location: ../dosen_tidak_tetap.php');
 	}
 
 ?>
