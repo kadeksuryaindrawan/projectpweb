@@ -4,11 +4,11 @@
 
 	if(isset($_POST['submit'])){
 		extract($_POST);
-		if(!empty($id_jurnalindex) && !empty($nama_peringkatjurnal)){
+		if(!empty($id_jurnalindex) && !empty($nama_peringkatjurnal) && !empty($jenis_media_publikasi)){
             $query_check = mysqli_query($connection,"SELECT * FROM peringkat_jurnal WHERE nama_peringkatjurnal = '$nama_peringkatjurnal'");
             if(mysqli_num_rows($query_check) == 0){
                 
-                        $query_insert = mysqli_query($connection,"INSERT INTO peringkat_jurnal VALUES (NULL,$id_jurnalindex,'$nama_peringkatjurnal')");
+                        $query_insert = mysqli_query($connection,"INSERT INTO peringkat_jurnal VALUES (NULL,$id_jurnalindex,'$nama_peringkatjurnal','$jenis_media_publikasi')");
     
                         if($query_insert){
                             echo"

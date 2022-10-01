@@ -41,6 +41,7 @@
                                                                 <th>Nama Dosen</th>
                                                                 <th>Judul Haki</th>
                                                                 <th>Tanggal Terdaftar</th>
+                                                                <th>Jenis</th>
                                                                 <th>Action</th>
                                                             </tr>
                                                         </thead>
@@ -55,6 +56,7 @@
                                                                         <td><?=$data['nama_dosen']?></td>
                                                                         <td><?=ucwords($data['judul_haki'])?></td>
                                                                         <td><?=date("d-M-Y", strtotime($data['tgl_terdaftar']))?></td>
+                                                                        <td><?=ucwords($data['jenis'])?></td>
                                                                         <td>
                                                                         <a class="text-warning" href="./detail_hakidosen.php?id=<?php echo $data['id_hakidosen'] ?>"><button class="btn btn-warning waves-effect waves-light" style="margin-bottom:15px;"><i class="fa fa-search"></i></button></a>
                                                                         <a class="text-primary" href="./lihat_hakidosen.php?id=<?php echo $data['id_hakidosen'] ?>"><button class="btn btn-primary waves-effect waves-light" style="margin-bottom:15px;">Lhat Sertif</button></a>

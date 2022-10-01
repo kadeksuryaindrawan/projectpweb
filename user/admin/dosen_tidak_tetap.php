@@ -1,6 +1,6 @@
 
 <?php
-    $page = 'publikasi_dosen';
+    $page = 'dosen_tidak_tetap';
     $pages = 'dsn';
     include "./partials/atas.php";
 ?> 
@@ -11,7 +11,7 @@
                               <div class="row align-items-center">
                                   <div class="col-md-8">
                                       <div class="page-header-title">
-                                          <h5 class="m-b-10">Publikasi Dosen</h5>
+                                          <h5 class="m-b-10">Dosen</h5>
                                           <p class="m-b-0">Selamat datang di dashboard admin ProdiKU</p>
                                       </div>
                                   </div>
@@ -26,11 +26,11 @@
                                 <div class="page-wrapper">
                                     <!-- Page-body start -->
                                     <div class="page-body">
-                                        <a href="./tambah_publikasidosen.php"><button class="btn btn-primary waves-effect waves-light" style="margin-bottom:15px;">Tambah Publikasi Dosen</button></a> 
+                                        <a href="./tambah_dosen_tidak_tetap.php"><button class="btn btn-primary waves-effect waves-light" style="margin-bottom:15px;">Tambah Dosen</button></a> 
                                         <!-- Hover table card start -->
                                         <div class="card">
                                             <div class="card-header">
-                                                <h5>Daftar Publikasi Dosen</h5>
+                                                <h5>Daftar Dosen Tidak Tetap</h5>
                                             </div>
                                             <div class="card-block table-border-style">
                                                 <div class="table-responsive">
@@ -38,29 +38,38 @@
                                                         <thead>
                                                             <tr>
                                                                 <th>No</th>
-                                                                <th>Judul Jurnal</th>
                                                                 <th>Nama Dosen</th>
-                                                                <th>Jumlah Sitasi</th>
+                                                                <th>NIDN</th>
+                                                                <th>Pendidikan Pasca Sarjana</th>
+                                                                <th>Bidang Keahlian</th>
+                                                                <th>Jabatan Akademik</th>
+                                                                <th>Sertifikat Kompetensi</th>
+                                                                <th>Matakuliah yang diampu</th>
+                                                                <th>Kesesuaian Bidang</th>
                                                                 <th>Action</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                         <?php
-                                                            $query = mysqli_query($connection, "SELECT publikasi_dosen.*,dosen.* FROM publikasi_dosen INNER JOIN dosen USING(nip) ORDER BY publikasi_dosen.id_publikasidosen DESC");
+                                                            $query = mysqli_query($connection, "SELECT jabatan.*,dosen.*,mengajar.*,kompetensi.* FROM jabatan INNER JOIN dosen ON jabatan.id = dosen.jabatan_akademik LEFT JOIN mengajar ON mengajar.nip = dosen.nip LEFT JOIN kompetensi ON mengajar.nip = kompetensi.nip WHERE dosen.status_dosen = 'tidak_tetap' AND dosen.prodi = mengajar.kode_prodi GROUP BY dosen.nip ORDER BY dosen.nip DESC");
                                                             $nomor = 1;
                                                             while($data = mysqli_fetch_assoc($query)){
                                                                 ?>
                                                                     <tr>
                                                                         <th scope="row"><?=$nomor++?></th>
-                                                                        <td><?=ucwords($data['judul_jurnal'])?></td>
                                                                         <td><?=ucwords($data['nama_dosen'])?></td>
-                                                                        <td><?=ucwords($data['jumlah_sitasi'])?></td>
+                                                                        <td><?=$data['nidn']?></td>
+                                                                        <td><?=ucwords($data['pendidikan_terakhir'])?></td>
+                                                                        <td><?=ucwords($data['bidang_keahlian'])?></td>
+                                                                        <td><?=ucwords($data['nama_jabatan'])?></td>
+                                                                        <td><?=ucwords($data['nama_sertif'])?></td>
+                                                                        <td><?=ucwords($data['nama_matakuliah'])?></td>
+                                                                        <td><?=ucwords($data['kesesuaian_bidang'])?></td>
                                                                         <td>
-                                                                        <a class="text-info" href="./detail_publikasidosen.php?id=<?php echo $data['id_publikasidosen'] ?>"><button class="btn btn-info waves-effect waves-light" style="margin-bottom:15px;"><i class="fa fa-search"></i></button></a>
-                                                                        <a class="text-primary" href="./lihat_file_jurnal_publikasidosen.php?id=<?php echo $data['id_publikasidosen'] ?>"><button class="btn btn-primary waves-effect waves-light" style="margin-bottom:15px;">Lihat Jurnal</button></a>
-                                                                        <a class="text-warning" href="./edit_publikasidosen.php?id=<?php echo $data['id_publikasidosen'] ?>"><button class="btn btn-warning waves-effect waves-light" style="margin-bottom:15px;">Edit</button></a>
-                                                                        <a class="text-danger" href="./hapus_publikasidosen.php?id=<?php echo $data['id_publikasidosen'] ?>" onclick = "return confirm('Yakin hapus publikasi dosen?')"><button class="btn btn-danger waves-effect waves-light" style="margin-bottom:15px;">Hapus</button></a>
-                                                                        
+                                                                        <!-- <a class="text-warning" href="./detail_dosen.php?nip=<?php echo $data['nip'] ?>"><button class="btn btn-warning waves-effect waves-light" style="margin-bottom:15px;"><i class="fa fa-search"></i></button></a> -->
+                                                                        <a class="text-primary" href="./edit_dosen_tidak_tetap.php?user_id=<?php echo $data['user_id'] ?>"><button class="btn btn-primary waves-effect waves-light" style="margin-bottom:15px;">Edit</button></a>
+                                                                        <a class="text-danger" href="./hapus_dosen_tidak_tetap.php?user_id=<?php echo $data['user_id'] ?>" onclick = "return confirm('Yakin hapus dosen?')"><button class="btn btn-danger waves-effect waves-light" style="margin-bottom:15px;">Hapus</button></a>
+                                                            
                                                                         </td>
                                                                     </tr>
                                                                 <?php

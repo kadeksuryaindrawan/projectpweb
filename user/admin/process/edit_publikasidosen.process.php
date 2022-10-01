@@ -4,9 +4,9 @@
 		extract($_POST);
         $tipe_file = $_FILES['file_jurnal']['type'];
         $nama_file = $_FILES['file_jurnal']['name'];
-		if(!empty($nip) && !empty($judul_jurnal) && !empty($nama_jurnal) && !empty($tgl_publish) && !empty($institusi_penerbit) && is_numeric($id)){
+		if(!empty($nip) && !empty($judul_jurnal) && !empty($nama_jurnal) && !empty($tgl_publish) && !empty($institusi_penerbit) && !empty($jumlah_sitasi) && is_numeric($id)){
             if($nama_file == "" && $id_jurnalindex == "" && $peringkat_jurnal == ""){
-                    $query_update = mysqli_query($connection, "UPDATE publikasi_dosen SET nip = '$nip', judul_jurnal = '$judul_jurnal', nama_jurnal = '$nama_jurnal', tgl_publish = '$tgl_publish', institusi_penerbit = '$institusi_penerbit' WHERE id_publikasidosen = $id");
+                    $query_update = mysqli_query($connection, "UPDATE publikasi_dosen SET nip = '$nip', judul_jurnal = '$judul_jurnal', nama_jurnal = '$nama_jurnal', tgl_publish = '$tgl_publish', institusi_penerbit = '$institusi_penerbit', jumlah_sitasi = '$jumlah_sitasi' WHERE id_publikasidosen = $id");
                     
                     if($query_update){
                         echo "	<script>
@@ -35,7 +35,7 @@
                     $folder    = "../../../public/file";
     
                     move_uploaded_file($file_temp, "$folder/$nama_baru");
-                    $query_update = mysqli_query($connection, "UPDATE publikasi_dosen SET nip = '$nip', judul_jurnal = '$judul_jurnal', nama_jurnal = '$nama_jurnal', tgl_publish = '$tgl_publish', institusi_penerbit = '$institusi_penerbit', file_jurnal = '$nama_baru' WHERE id_publikasidosen = $id");
+                    $query_update = mysqli_query($connection, "UPDATE publikasi_dosen SET nip = '$nip', judul_jurnal = '$judul_jurnal', nama_jurnal = '$nama_jurnal', tgl_publish = '$tgl_publish', institusi_penerbit = '$institusi_penerbit', file_jurnal = '$nama_baru', jumlah_sitasi = '$jumlah_sitasi' WHERE id_publikasidosen = $id");
                     
                     if($query_update){
                         echo "	<script>
@@ -56,7 +56,7 @@
             }
 
             else if($nama_file == "" && $id_jurnalindex != "" && $peringkat_jurnal != ""){
-                $query_update = mysqli_query($connection, "UPDATE publikasi_dosen SET nip = '$nip', judul_jurnal = '$judul_jurnal', nama_jurnal = '$nama_jurnal',id_jurnalindex = $id_jurnalindex, peringkat_jurnal = '$peringkat_jurnal', tgl_publish = '$tgl_publish', institusi_penerbit = '$institusi_penerbit' WHERE id_publikasidosen = $id");
+                $query_update = mysqli_query($connection, "UPDATE publikasi_dosen SET nip = '$nip', judul_jurnal = '$judul_jurnal', nama_jurnal = '$nama_jurnal',id_jurnalindex = $id_jurnalindex, peringkat_jurnal = '$peringkat_jurnal', tgl_publish = '$tgl_publish', institusi_penerbit = '$institusi_penerbit', jumlah_sitasi = '$jumlah_sitasi' WHERE id_publikasidosen = $id");
                     
                     if($query_update){
                         echo "	<script>
@@ -85,7 +85,7 @@
                     $folder    = "../../../public/file";
     
                     move_uploaded_file($file_temp, "$folder/$nama_baru");
-                    $query_update = mysqli_query($connection, "UPDATE publikasi_dosen SET nip = '$nip', judul_jurnal = '$judul_jurnal', nama_jurnal = '$nama_jurnal',id_jurnalindex = $id_jurnalindex, peringkat_jurnal = '$peringkat_jurnal', tgl_publish = '$tgl_publish', institusi_penerbit = '$institusi_penerbit', file_jurnal = '$nama_baru' WHERE id_publikasidosen = $id");
+                    $query_update = mysqli_query($connection, "UPDATE publikasi_dosen SET nip = '$nip', judul_jurnal = '$judul_jurnal', nama_jurnal = '$nama_jurnal',id_jurnalindex = $id_jurnalindex, peringkat_jurnal = '$peringkat_jurnal', tgl_publish = '$tgl_publish', institusi_penerbit = '$institusi_penerbit', file_jurnal = '$nama_baru', jumlah_sitasi = '$jumlah_sitasi' WHERE id_publikasidosen = $id");
                     
                     if($query_update){
                         echo "	<script>

@@ -6,9 +6,9 @@
 		extract($_POST);
         $tipe_file = $_FILES['file_jurnal']['type'];
         $nama_file = $_FILES['file_jurnal']['name'];
-		if(!empty($nip) && !empty($judul_jurnal) && !empty($nama_jurnal) && !empty($id_jurnalindex) && !empty($peringkat_jurnal) && !empty($tgl_publish) && !empty($institusi_penerbit)){
+		if(!empty($nip) && !empty($judul_jurnal) && !empty($nama_jurnal) && !empty($id_jurnalindex) && !empty($peringkat_jurnal) && !empty($tgl_publish) && !empty($institusi_penerbit) && !empty($jumlah_sitasi)){
 			if($tipe_file == "application/pdf"){
-                    $query_insert = mysqli_query($connection,"INSERT INTO publikasi_dosen VALUES (NULL,'$nip','$judul_jurnal','$nama_jurnal',$id_jurnalindex,'$peringkat_jurnal','$tgl_publish','$institusi_penerbit',NULL)");
+                    $query_insert = mysqli_query($connection,"INSERT INTO publikasi_dosen VALUES (NULL,'$nip','$judul_jurnal','$nama_jurnal',$id_jurnalindex,'$peringkat_jurnal','$tgl_publish','$institusi_penerbit',NULL,'$jumlah_sitasi')");
                     $query = mysqli_query($connection,"SELECT id_publikasidosen FROM publikasi_dosen ORDER BY id_publikasidosen DESC LIMIT 1");
                     $data = mysqli_fetch_assoc($query);
                     $id_publikasidosen = $data['id_publikasidosen'];

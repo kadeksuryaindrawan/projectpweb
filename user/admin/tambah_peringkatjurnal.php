@@ -59,6 +59,12 @@ $pages = 'jurnal';
                                                                 <span class="form-bar"></span>
                                                                 <label class="float-label">Masukkan Nama Peringkat Jurnal</label>
                                                             </div>
+
+                                                            <div class="form-group form-default">
+                                                                <input type="text" name="jenis_media_publikasi" class="form-control" required="">
+                                                                <span class="form-bar"></span>
+                                                                <label class="float-label">Masukkan Jenis Media Publikasi</label>
+                                                            </div>
                                                             <input type="submit" name="submit" class="btn btn-success waves-effect waves-light" value="Tambah">
                                                         </form>
                                                     </div>

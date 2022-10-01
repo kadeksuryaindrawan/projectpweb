@@ -269,9 +269,15 @@
                                       <span class="pcoded-mcaret"></span>
                                   </a>
                                   <ul class="pcoded-submenu">
-                                    <li <?php if($page == "dosen") echo "class='active'";?>>
+                                    <li <?php if($page == "dosen_tetap") echo "class='active'";?>>
                                         <a href="dosen.php" class="waves-effect waves-dark">
-                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Daftar Dosen</span>
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Dosen Tetap</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                    <li <?php if($page == "dosen_tidak_tetap") echo "class='active'";?>>
+                                        <a href="dosen_tidak_tetap.php" class="waves-effect waves-dark">
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Dosen Tidak Tetap</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
@@ -411,6 +417,14 @@
                                   <a href="ewmp.php" class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="ti-book"></i><b>FC</b></span>
                                       <span class="pcoded-mtext" data-i18n="nav.form-components.main">EWMP</span>
+                                      <span class="pcoded-mcaret"></span>
+                                  </a>
+                              </li>
+
+                              <li <?php if($page == "rekognisi") echo "class='active'";?>>
+                                  <a href="rekognisi.php" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-book"></i><b>FC</b></span>
+                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">Rekognisi</span>
                                       <span class="pcoded-mcaret"></span>
                                   </a>
                               </li>

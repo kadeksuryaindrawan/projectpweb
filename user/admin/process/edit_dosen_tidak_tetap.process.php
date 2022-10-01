@@ -9,13 +9,13 @@
                     if($query_update_user && $query_update_dosen){
                         echo "	<script>
                                     alert('Data dosen sukses di edit!');
-                                    location.href = '../dosen.php';
+                                    location.href = '../dosen_tidak_tetap.php';
                                 </script>";
                     }
                     else{
                         echo "	<script>
                                     alert('Data dosen Gagal di edit!');
-                                    location.href = '../dosen.php';
+                                    location.href = '../dosen_tidak_tetap.php';
                                 </script>";
                     }
                 }
@@ -28,13 +28,13 @@
                             if($query_update_user && $query_update_dosen){
                                 echo "	<script>
                                             alert('Data dosen sukses di edit!');
-                                            location.href = '../dosen.php';
+                                            location.href = '../dosen_tidak_tetap.php';
                                         </script>";
                             }
                             else{
                                 echo "	<script>
                                             alert('Data dosen Gagal di edit!');
-                                            location.href = '../dosen.php';
+                                            location.href = '../dosen_tidak_tetap.php';
                                         </script>";
                             }
                         }
@@ -52,10 +52,10 @@
 		}
 		echo "	<script>
 			 		alert('$pesan');
-			 		location.href = '../edit_dosen.php?nip=$nip';
+			 		location.href = '../edit_dosen_tidak_tetap.php?nip=$nip';
 			 	</script>";
 	}
 	else{
-		header('location: ../dosen.php');
+		header('location: ../dosen_tidak_tetap.php');
 	}
 ?>

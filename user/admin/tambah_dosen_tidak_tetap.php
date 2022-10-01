@@ -1,5 +1,5 @@
 <?php
-$page = 'dosen_tetap';
+$page = 'dosen_tidak_tetap';
 $pages = 'dsn';
     include "./partials/atas.php";
 ?> 
@@ -33,7 +33,7 @@ $pages = 'dsn';
                                                         <!--<span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>-->
                                                     </div>
                                                     <div class="card-block">
-                                                        <form class="form-material" method="POST" action="./process/tambah_dosen.process.php">
+                                                        <form class="form-material" method="POST" action="./process/tambah_dosen_tidak_tetap.process.php">
                                                             <div class="form-group form-default">
                                                                 <input type="email" name="email" class="form-control" required="">
                                                                 <span class="form-bar"></span>

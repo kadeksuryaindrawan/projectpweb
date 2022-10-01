@@ -3,11 +3,11 @@
 
 	if(isset($_POST['submit'])){
 		extract($_POST);
-		if(!empty($nip) && !empty($penulis_buku) && !empty($judul_buku) && !empty($penerbit) && !empty($tahun_terbit)){
+		if(!empty($nip) && !empty($penulis_buku) && !empty($judul_buku) && !empty($penerbit) && !empty($tahun_terbit) && !empty($isbn)){
             if($tahun_terbit > 0){
                 $query_check = mysqli_query($connection, "SELECT * FROM publikasi_buku WHERE judul_buku = '$judul_buku'");
 					if(mysqli_num_rows($query_check) == 0){
-						$query_insert = mysqli_query($connection, "INSERT INTO publikasi_buku VALUES (NULL, '$nip','$penulis_buku', '$judul_buku', '$penerbit', $tahun_terbit,'terverifikasi')");
+						$query_insert = mysqli_query($connection, "INSERT INTO publikasi_buku VALUES (NULL, '$nip','$penulis_buku', '$judul_buku', '$penerbit', $tahun_terbit,'terverifikasi', '$isbn')");
 						if($query_insert){
 								echo"
 										<script>

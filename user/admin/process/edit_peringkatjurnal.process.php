@@ -2,8 +2,8 @@
 	require_once "../../../config/connection.php";
 	if(isset($_POST['submit'])){
 		extract($_POST);
-		if(!empty($id_jurnalindex) && !empty($nama_peringkatjurnal) && is_numeric($id)){
-                    $query_update = mysqli_query($connection, "UPDATE peringkat_jurnal SET id_jurnalindex = $id_jurnalindex, nama_peringkatjurnal = '$nama_peringkatjurnal' WHERE id_peringkatjurnal = $id");
+		if(!empty($id_jurnalindex) && !empty($nama_peringkatjurnal) && !empty($jenis_media_publikasi) && is_numeric($id)){
+                    $query_update = mysqli_query($connection, "UPDATE peringkat_jurnal SET id_jurnalindex = $id_jurnalindex, nama_peringkatjurnal = '$nama_peringkatjurnal', jenis_media_publikasi = '$jenis_media_publikasi' WHERE id_peringkatjurnal = $id");
                     
                     if($query_update){
                         echo "	<script>
