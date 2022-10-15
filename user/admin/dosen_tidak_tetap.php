@@ -27,6 +27,7 @@
                                     <!-- Page-body start -->
                                     <div class="page-body">
                                         <a href="./tambah_dosen_tidak_tetap.php"><button class="btn btn-primary waves-effect waves-light" style="margin-bottom:15px;">Tambah Dosen</button></a> 
+                                        <a href="./export_dosen_tidak_tetap.php"><button class="btn btn-success waves-effect waves-light" style="margin-bottom:15px;">Export Excel</button></a>
                                         <!-- Hover table card start -->
                                         <div class="card">
                                             <div class="card-header">
@@ -64,7 +65,21 @@
                                                                         <td><?=ucwords($data['nama_jabatan'])?></td>
                                                                         <td><?=ucwords($data['nama_sertif'])?></td>
                                                                         <td><?=ucwords($data['nama_matakuliah'])?></td>
-                                                                        <td><?=ucwords($data['kesesuaian_bidang'])?></td>
+                                                                        <td>
+                                                                        <?php
+                                                                                if($data['kesesuaian_bidang'] == 'y'){
+                                                                                    ?>
+                                                                                        V
+                                                                                    <?php
+                                                                                }
+
+                                                                                if($data['kesesuaian_bidang'] == 'n'){
+                                                                                    ?>
+                                                                                        
+                                                                                    <?php
+                                                                                }
+                                                                            ?>
+                                                                        </td>
                                                                         <td>
                                                                         <!-- <a class="text-warning" href="./detail_dosen.php?nip=<?php echo $data['nip'] ?>"><button class="btn btn-warning waves-effect waves-light" style="margin-bottom:15px;"><i class="fa fa-search"></i></button></a> -->
                                                                         <a class="text-primary" href="./edit_dosen_tidak_tetap.php?user_id=<?php echo $data['user_id'] ?>"><button class="btn btn-primary waves-effect waves-light" style="margin-bottom:15px;">Edit</button></a>
@@ -74,6 +89,24 @@
                                                                     </tr>
                                                                 <?php
                                                             }
+
+                                                            $totalQuery = mysqli_query($connection,"SELECT jabatan.*,COUNT(dosen.nip) as total,COUNT(dosen.DTPS) as totalDTPS,dosen.*,mengajar.*,kompetensi.* FROM jabatan INNER JOIN dosen ON jabatan.id = dosen.jabatan_akademik LEFT JOIN mengajar ON mengajar.nip = dosen.nip LEFT JOIN kompetensi ON mengajar.nip = kompetensi.nip WHERE dosen.status_dosen = 'tidak_tetap' AND dosen.prodi = mengajar.kode_prodi GROUP BY dosen.nip ORDER BY dosen.nip DESC");
+                                                            $total = mysqli_fetch_assoc($totalQuery);
+                                                            ?>
+                                                                <tr>
+                                                                    <td><strong>Jumlah</strong></td>
+                                                                    <td><strong>NDTT : <?= $total['total'] ?></strong></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                </tr>
+                                                            <?php
                                                         ?>
                                                         </tbody>
                                                     </table>

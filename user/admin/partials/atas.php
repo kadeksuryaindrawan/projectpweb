@@ -287,9 +287,24 @@
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
+
+                                    <li <?php if($page == "pagelaran_pameran") echo "class='active'";?>>
+                                        <a href="pagelaran_pameran.php" class="waves-effect waves-dark">
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Pagelaran/Pameran/Presentasi</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                    
                                     <li <?php if($page == "publikasi_dosen") echo "class='active'";?>>
                                         <a href="publikasi_dosen.php" class="waves-effect waves-dark">
                                             <span class="pcoded-mtext" data-i18n="nav.form-components.main">Publikasi Dosen</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+
+                                    <li <?php if($page == "publikasi_ilmiah") echo "class='active'";?>>
+                                        <a href="publikasi_ilmiah.php" class="waves-effect waves-dark">
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Publikasi Ilmiah DTPS</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
@@ -398,10 +413,25 @@
                                   </a>
                               </li>
 
+                              <li <?php if($page == "jumlah_pengabdian") echo "class='active'";?>>
+                                  <a href="jumlah_pengabdian.php" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-heart"></i><b>FC</b></span>
+                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">Jumlah Pengabdian</span>
+                                      <span class="pcoded-mcaret"></span>
+                                  </a>
+                              </li>
+
                               <li <?php if($page == "penelitian") echo "class='active'";?>>
                                   <a href="penelitian.php" class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="ti-eye"></i><b>FC</b></span>
                                       <span class="pcoded-mtext" data-i18n="nav.form-components.main">Penelitian</span>
+                                      <span class="pcoded-mcaret"></span>
+                                  </a>
+                              </li>
+                              <li <?php if($page == "jumlah_penelitian") echo "class='active'";?>>
+                                  <a href="jumlah_penelitian.php" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-eye"></i><b>FC</b></span>
+                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">Jumlah Penelitian</span>
                                       <span class="pcoded-mcaret"></span>
                                   </a>
                               </li>

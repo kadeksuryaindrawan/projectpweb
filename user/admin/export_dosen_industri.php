@@ -1,34 +1,8 @@
-
 <?php
-    $page = 'dosen_industri';
-    $pages = 'dsn';
-    include "./partials/atas.php";
-?> 
-                  <div class="pcoded-content">
-                      <!-- Page-header start -->
-                      <div class="page-header">
-                          <div class="page-block">
-                              <div class="row align-items-center">
-                                  <div class="col-md-8">
-                                      <div class="page-header-title">
-                                          <h5 class="m-b-10">Dosen Industri</h5>
-                                          <p class="m-b-0">Selamat datang di dashboard admin ProdiKU</p>
-                                      </div>
-                                  </div>
-                                  
-                              </div>
-                          </div>
-                      </div>
-                      <!-- Page-header end -->
-                        <div class="pcoded-inner-content">
-                            <!-- Main-body start -->
-                            <div class="main-body">
-                                <div class="page-wrapper">
-                                    <!-- Page-body start --> 
-                                    <div class="page-body">
-                                        <a href="./tambah_dosen_industri.php"><button class="btn btn-primary waves-effect waves-light" style="margin-bottom:15px;">Tambah Dosen Industri</button></a> 
-                                        <a href="./export_dosen_industri.php"><button class="btn btn-success waves-effect waves-light" style="margin-bottom:15px;">Export Excel</button></a>
-                                        <!-- Hover table card start -->
+include "../../config/connection.php";
+header("Content-type: application/vnd.ms-excel");
+header("Content-Disposition: attachment; filename=dosen_industri.xls");
+?>
                                         <div class="card">
                                             <div class="card-header">
                                                 <h5>Daftar Dosen Industri</h5>
@@ -81,14 +55,4 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Hover table card end -->
-                                    </div>
-                                    <!-- Page-body end -->
-                                </div>
-                                <div id="styleSelector"> </div>
-                            </div>
-                        </div>
-                    </div>
-<?php
-    include "./partials/bawah.php";
-?> 
+                                        

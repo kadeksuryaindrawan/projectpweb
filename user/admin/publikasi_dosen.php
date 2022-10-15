@@ -27,6 +27,7 @@
                                     <!-- Page-body start -->
                                     <div class="page-body">
                                         <a href="./tambah_publikasidosen.php"><button class="btn btn-primary waves-effect waves-light" style="margin-bottom:15px;">Tambah Publikasi Dosen</button></a> 
+                                        <a href="./export_publikasidosen.php"><button class="btn btn-success waves-effect waves-light" style="margin-bottom:15px;">Export Excel</button></a>
                                         <!-- Hover table card start -->
                                         <div class="card">
                                             <div class="card-header">
@@ -38,8 +39,8 @@
                                                         <thead>
                                                             <tr>
                                                                 <th>No</th>
-                                                                <th>Judul Jurnal</th>
                                                                 <th>Nama Dosen</th>
+                                                                <th>Judul Artikel</th>
                                                                 <th>Jumlah Sitasi</th>
                                                                 <th>Action</th>
                                                             </tr>
@@ -52,8 +53,8 @@
                                                                 ?>
                                                                     <tr>
                                                                         <th scope="row"><?=$nomor++?></th>
-                                                                        <td><?=ucwords($data['judul_jurnal'])?></td>
                                                                         <td><?=ucwords($data['nama_dosen'])?></td>
+                                                                        <td><?=ucwords($data['judul_jurnal'])?></td>
                                                                         <td><?=ucwords($data['jumlah_sitasi'])?></td>
                                                                         <td>
                                                                         <a class="text-info" href="./detail_publikasidosen.php?id=<?php echo $data['id_publikasidosen'] ?>"><button class="btn btn-info waves-effect waves-light" style="margin-bottom:15px;"><i class="fa fa-search"></i></button></a>
