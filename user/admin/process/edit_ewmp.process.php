@@ -2,7 +2,7 @@
 	require_once "../../../config/connection.php";
 	if(isset($_POST['submit'])){
 		extract($_POST);
-		if(!empty($nip) && !empty($tahun) && !empty($pendidikan_prodi) && !empty($pendidikan_prodi_lain) && !empty($pendidikan_pt_luar) && !empty($penelitian) && !empty($pkm) && !empty($penunjang) && is_numeric($id)){
+		if(!empty($nip) && !empty($tahun) && is_numeric($id)){
                     $query_update = mysqli_query($connection, "UPDATE ewmp SET nip = '$nip', tahun = '$tahun', pendidikan_prodi = $pendidikan_prodi, pendidikan_prodi_lain = $pendidikan_prodi_lain, pendidikan_pt_luar = $pendidikan_pt_luar, penelitian = $penelitian, pkm = $pkm, penunjang = $penunjang WHERE id = $id");
                     
                     if($query_update){

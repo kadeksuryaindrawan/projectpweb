@@ -1,7 +1,7 @@
 
 <?php
     $page = 'publikasi_ilmiah';
-    $pages = 'dsn';
+    $pages = 'report';
     include "./partials/atas.php";
 ?> 
                   <div class="pcoded-content">
@@ -39,29 +39,38 @@
                                                             <tr>
                                                                 <th>No</th>
                                                                 <th>Media Publikasi</th>
+                                                                <th>TS-2</th>
+                                                                <th>TS-1</th>
+                                                                <th>TS</th>
                                                                 <th>Jumlah</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                         <?php
-                                                            $query = mysqli_query($connection, "SELECT COUNT(publikasi_dosen.id_publikasidosen) AS jumlah, peringkat_jurnal.* FROM publikasi_dosen INNER JOIN peringkat_jurnal ON publikasi_dosen.peringkat_jurnal = peringkat_jurnal.id_peringkatjurnal GROUP BY(peringkat_jurnal.jenis_media_publikasi)");
+                                                            $query = mysqli_query($connection, "SELECT COUNT(*) AS jumlah, SUM(IF(YEAR(publikasi_dosen.tgl_publish)=2022,1,0)) as ts, SUM(IF(YEAR(publikasi_dosen.tgl_publish)=2021,1,0)) as ts1, SUM(IF(YEAR(publikasi_dosen.tgl_publish)=2020,1,0)) as ts2, dosen.*, peringkat_jurnal.*, publikasi_dosen.* FROM dosen INNER JOIN publikasi_dosen USING(nip) INNER JOIN peringkat_jurnal ON publikasi_dosen.peringkat_jurnal = peringkat_jurnal.id_peringkatjurnal WHERE dosen.DTPS = 'y' GROUP BY(peringkat_jurnal.jenis_media_publikasi)");
                                                             $nomor = 1;
                                                             while($data = mysqli_fetch_assoc($query)){
                                                                 ?>
                                                                     <tr>
                                                                         <th scope="row"><?=$nomor++?></th>
                                                                         <td><?=ucwords($data['jenis_media_publikasi'])?></td>
+                                                                        <td><?= $data['ts2'] ?></td>
+                                                                        <td><?= $data['ts1'] ?></td>
+                                                                        <td><?= $data['ts'] ?></td>
                                                                         <td><?= $data['jumlah'] ?></td>
                                                                         
                                                                     </tr>
                                                                 <?php
                                                             }
-                                                            $totalQuery = mysqli_query($connection,"SELECT COUNT(id_publikasidosen) as total FROM publikasi_dosen");
+                                                            $totalQuery = mysqli_query($connection,"SELECT COUNT(*) AS total, SUM(IF(YEAR(publikasi_dosen.tgl_publish)=2022,1,0)) as ts, SUM(IF(YEAR(publikasi_dosen.tgl_publish)=2021,1,0)) as ts1, SUM(IF(YEAR(publikasi_dosen.tgl_publish)=2020,1,0)) as ts2, dosen.*, peringkat_jurnal.*, publikasi_dosen.* FROM dosen INNER JOIN publikasi_dosen USING(nip) INNER JOIN peringkat_jurnal ON publikasi_dosen.peringkat_jurnal = peringkat_jurnal.id_peringkatjurnal WHERE dosen.DTPS = 'y'");
                                                             $total = mysqli_fetch_assoc($totalQuery);
                                                             ?>
                                                                 <tr>
                                                                     <td><strong>Total Jumlah</strong></td>
                                                                     <td></td>
+                                                                    <td><?= $total['ts2'] ?></td>
+                                                                    <td><?= $total['ts1'] ?></td>
+                                                                    <td><?= $total['ts'] ?></td>
                                                                     <td><strong><?= $total['total'] ?></strong></td>
                                                                 </tr>
                                                             <?php

@@ -208,6 +208,98 @@
                                       <span class="pcoded-mcaret"></span>
                                   </a>
                               </li>
+
+                              <li class="pcoded-hasmenu <?php if($pages == "report") echo "active";?> <?php if($pages == "report") echo "pcoded-trigger";?>">
+                                  <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-files"></i></span>
+                                      <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Report LKPS</span>
+                                      <span class="pcoded-mcaret"></span>
+                                  </a>
+                                  <ul class="pcoded-submenu">
+                                    <li <?php if($page == "dosen_tetap") echo "class='active'";?>>
+                                        <a href="dosen_tetap.php" class="waves-effect waves-dark">
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Dosen Tetap</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                    <li <?php if($page == "dosen_tidak_tetap") echo "class='active'";?>>
+                                        <a href="dosen_tidak_tetap.php" class="waves-effect waves-dark">
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Dosen Tidak Tetap</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                    <li <?php if($page == "pembimbing_utama_report") echo "class='active'";?>>
+                                        <a href="pembimbing_utama_report.php" class="waves-effect waves-dark">
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Pembimbing Utama</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+
+                                    <li <?php if($page == "ewmp_report") echo "class='active'";?>>
+                                        <a href="ewmp_report.php" class="waves-effect waves-dark">
+                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">EWMP</span>
+                                      <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                    <li <?php if($page == "dosen_industri_report") echo "class='active'";?>>
+                                        <a href="dosen_industri_report.php" class="waves-effect waves-dark">
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Dosen Industri</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+
+                                    <li <?php if($page == "rekognisi_report") echo "class='active'";?>>
+                                    <a href="rekognisi_report.php" class="waves-effect waves-dark">
+                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">Rekognisi</span>
+                                      <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    </li>
+
+                                    <li <?php if($page == "jumlah_penelitian") echo "class='active'";?>>
+                                        <a href="jumlah_penelitian.php" class="waves-effect waves-dark">
+                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">Penelitian DTPS</span>
+                                      <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+
+                                    <li <?php if($page == "jumlah_pengabdian") echo "class='active'";?>>
+                                        <a href="jumlah_pengabdian.php" class="waves-effect waves-dark">
+                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">Pengabdian Kepada Masyarakat DTPS</span>
+                                      <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+
+                                    <li <?php if($page == "publikasi_ilmiah") echo "class='active'";?>>
+                                        <a href="publikasi_ilmiah.php" class="waves-effect waves-dark">
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Publikasi Ilmiah DTPS</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+
+                                    <li <?php if($page == "pagelaran_pameran") echo "class='active'";?>>
+                                        <a href="pagelaran_pameran.php" class="waves-effect waves-dark">
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Pagelaran/Pameran/Presentasi</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+
+                                    <li <?php if($page == "publikasi_dosen_report") echo "class='active'";?>>
+                                        <a href="publikasi_dosen_report.php" class="waves-effect waves-dark">
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Karya Ilmiah DTPS</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+
+                                    <li <?php if($page == "produk_dosen_report") echo "class='active'";?>>
+                                        <a href="produk_dosen_report.php" class="waves-effect waves-dark">
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Produk / Jasa DTPS</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+
+                                  </ul>
+                              </li>
+
                               <li <?php if($page == "admin") echo "class='active'";?>>
                                   <a href="admin.php" class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="ti-user"></i><b>FC</b></span>
@@ -269,15 +361,9 @@
                                       <span class="pcoded-mcaret"></span>
                                   </a>
                                   <ul class="pcoded-submenu">
-                                    <li <?php if($page == "dosen_tetap") echo "class='active'";?>>
+                                    <li <?php if($page == "dosen.php") echo "class='active'";?>>
                                         <a href="dosen.php" class="waves-effect waves-dark">
-                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Dosen Tetap</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
-                                    <li <?php if($page == "dosen_tidak_tetap") echo "class='active'";?>>
-                                        <a href="dosen_tidak_tetap.php" class="waves-effect waves-dark">
-                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Dosen Tidak Tetap</span>
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Daftar Dosen</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
@@ -288,23 +374,11 @@
                                         </a>
                                     </li>
 
-                                    <li <?php if($page == "pagelaran_pameran") echo "class='active'";?>>
-                                        <a href="pagelaran_pameran.php" class="waves-effect waves-dark">
-                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Pagelaran/Pameran/Presentasi</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
+                                    
                                     
                                     <li <?php if($page == "publikasi_dosen") echo "class='active'";?>>
                                         <a href="publikasi_dosen.php" class="waves-effect waves-dark">
                                             <span class="pcoded-mtext" data-i18n="nav.form-components.main">Publikasi Dosen</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
-
-                                    <li <?php if($page == "publikasi_ilmiah") echo "class='active'";?>>
-                                        <a href="publikasi_ilmiah.php" class="waves-effect waves-dark">
-                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Publikasi Ilmiah DTPS</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
@@ -413,25 +487,12 @@
                                   </a>
                               </li>
 
-                              <li <?php if($page == "jumlah_pengabdian") echo "class='active'";?>>
-                                  <a href="jumlah_pengabdian.php" class="waves-effect waves-dark">
-                                      <span class="pcoded-micon"><i class="ti-heart"></i><b>FC</b></span>
-                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">Jumlah Pengabdian</span>
-                                      <span class="pcoded-mcaret"></span>
-                                  </a>
-                              </li>
+                              
 
                               <li <?php if($page == "penelitian") echo "class='active'";?>>
                                   <a href="penelitian.php" class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="ti-eye"></i><b>FC</b></span>
                                       <span class="pcoded-mtext" data-i18n="nav.form-components.main">Penelitian</span>
-                                      <span class="pcoded-mcaret"></span>
-                                  </a>
-                              </li>
-                              <li <?php if($page == "jumlah_penelitian") echo "class='active'";?>>
-                                  <a href="jumlah_penelitian.php" class="waves-effect waves-dark">
-                                      <span class="pcoded-micon"><i class="ti-eye"></i><b>FC</b></span>
-                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">Jumlah Penelitian</span>
                                       <span class="pcoded-mcaret"></span>
                                   </a>
                               </li>
@@ -458,6 +519,8 @@
                                       <span class="pcoded-mcaret"></span>
                                   </a>
                               </li>
+
+                              
                               
                           </ul>          
                   </nav>

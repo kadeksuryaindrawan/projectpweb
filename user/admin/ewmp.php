@@ -26,7 +26,7 @@
                                     <!-- Page-body start -->
                                     <div class="page-body">
                                         <a href="./tambah_ewmp.php"><button class="btn btn-primary waves-effect waves-light" style="margin-bottom:15px;">Tambah EWMP</button></a> 
-                                        <a href="./export_ewmp.php"><button class="btn btn-success waves-effect waves-light" style="margin-bottom:15px;">Export Excel</button></a>
+                                        
                                         <!-- Hover table card start -->
                                         <div class="card">
                                             <div class="card-header">
@@ -73,12 +73,12 @@
                                                                             ?>
                                                                             
                                                                         </td>
-                                                                        <td><?=$data['pendidikan_prodi']?></td>
-                                                                        <td><?=$data['pendidikan_prodi_lain']?></td>
-                                                                        <td><?=$data['pendidikan_pt_luar']?></td>
-                                                                        <td><?=$data['penelitian']?></td>
-                                                                        <td><?=$data['pkm']?></td>
-                                                                        <td><?=$data['penunjang']?></td>
+                                                                        <td><?=str_replace(".",",",$data['pendidikan_prodi'])?></td>
+                                                                        <td><?=str_replace(".",",",$data['pendidikan_prodi_lain'])?></td>
+                                                                        <td><?=str_replace(".",",",$data['pendidikan_pt_luar'])?></td>
+                                                                        <td><?=str_replace(".",",",$data['penelitian'])?></td>
+                                                                        <td><?=str_replace(".",",",$data['pkm'])?></td>
+                                                                        <td><?=str_replace(".",",",$data['penunjang'])?></td>
                                                                         
                                                                         <td>
                                                                         <a class="text-warning" href="./edit_ewmp.php?id=<?php echo $data['id'] ?>"><button class="btn btn-warning waves-effect waves-light" style="margin-bottom:15px;">Edit</button></a>

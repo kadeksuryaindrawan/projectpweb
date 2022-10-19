@@ -5,7 +5,7 @@ header("Content-Disposition: attachment; filename=publikasi_dosen.xls");
 ?>
                                         <div class="card">
                                             <div class="card-header">
-                                                <h5>Daftar Publikasi Dosen</h5>
+                                                <h5>Daftar Karya Ilmiah DTPS</h5>
                                             </div>
                                             <div class="card-block table-border-style">
                                                 <div class="table-responsive">
@@ -20,7 +20,7 @@ header("Content-Disposition: attachment; filename=publikasi_dosen.xls");
                                                         </thead>
                                                         <tbody>
                                                         <?php
-                                                            $query = mysqli_query($connection, "SELECT publikasi_dosen.*,dosen.* FROM publikasi_dosen INNER JOIN dosen USING(nip) ORDER BY publikasi_dosen.id_publikasidosen DESC");
+                                                            $query = mysqli_query($connection, "SELECT publikasi_dosen.*,dosen.* FROM publikasi_dosen INNER JOIN dosen USING(nip) WHERE dosen.DTPS='y' ORDER BY publikasi_dosen.id_publikasidosen DESC");
                                                             $nomor = 1;
                                                             while($data = mysqli_fetch_assoc($query)){
                                                                 ?>
@@ -29,7 +29,6 @@ header("Content-Disposition: attachment; filename=publikasi_dosen.xls");
                                                                         <td><?=ucwords($data['nama_dosen'])?></td>
                                                                         <td><?=ucwords($data['judul_jurnal'])?></td>
                                                                         <td><?=ucwords($data['jumlah_sitasi'])?></td>
-                                                                        
                                                                     </tr>
                                                                 <?php
                                                             }
