@@ -1,6 +1,6 @@
 
 <?php
-    $page = 'dosen_tetap';
+    $page = 'dosen';
     $pages = 'dsn';
     include "./partials/atas.php";
 ?> 
@@ -53,7 +53,7 @@
                                                         </thead>
                                                         <tbody>
                                                         <?php
-                                                            $query = mysqli_query($connection, "SELECT jabatan.*,dosen.*,mengajar.*,kompetensi.* FROM jabatan INNER JOIN dosen ON jabatan.id = dosen.jabatan_akademik LEFT JOIN mengajar ON mengajar.nip = dosen.nip LEFT JOIN kompetensi ON mengajar.nip = kompetensi.nip WHERE dosen.status_dosen = 'tetap' AND dosen.prodi = mengajar.kode_prodi GROUP BY dosen.nip ORDER BY dosen.nip DESC");
+                                                            $query = mysqli_query($connection, "SELECT jabatan.*,dosen.*,mengajar.*,kompetensi.* FROM jabatan INNER JOIN dosen ON jabatan.id = dosen.jabatan_akademik LEFT JOIN mengajar ON mengajar.nip = dosen.nip LEFT JOIN kompetensi ON mengajar.nip = kompetensi.nip WHERE dosen.status_dosen = 'tetap' AND dosen.prodi = mengajar.kode_prodi GROUP BY mengajar.kode_prodi ORDER BY dosen.nip DESC");
                                                             $nomor = 1;
                                                             while($data = mysqli_fetch_assoc($query)){
                                                                 ?>

@@ -21,7 +21,6 @@ header("Content-Disposition: attachment; filename=dosen_industri.xls");
                                                                 <th>Sertifikat Profesi</th>
                                                                 <th>Mata Kuliah</th>
                                                                 <th>Bobot SKS</th>
-                                                                <th>Action</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -40,12 +39,6 @@ header("Content-Disposition: attachment; filename=dosen_industri.xls");
                                                                         <td><?=ucfirst($data['list_sertifikat'])?></td>
                                                                         <td><?=ucfirst($data['list_matakuliah'])?></td>
                                                                         <td><?=$data['bobot_sks']?></td>
-                                                                        
-                                                                        <td>
-                                                                        <a class="text-warning" href="./edit_dosen_industri.php?id=<?php echo $data['id'] ?>"><button class="btn btn-warning waves-effect waves-light" style="margin-bottom:15px;">Edit</button></a>
-                                                                        <a class="text-danger" href="./hapus_dosen_industri.php?id=<?php echo $data['id'] ?>" onclick = "return confirm('Yakin hapus dosen industri?')"><button class="btn btn-danger waves-effect waves-light" style="margin-bottom:15px;">Hapus</button></a>
-                                                                        
-                                                                        </td>
                                                                     </tr>
                                                                 <?php
                                                             }

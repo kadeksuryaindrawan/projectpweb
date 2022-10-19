@@ -4,7 +4,7 @@
 
 	if(isset($_POST['submit'])){
 		extract($_POST);
-		if(!empty($nip) && !empty($tahun) && !empty($pendidikan_prodi) && !empty($pendidikan_prodi_lain) && !empty($pendidikan_pt_luar) && !empty($penelitian) && !empty($pkm) && !empty($penunjang)){
+		if(!empty($nip) && !empty($tahun)){
                     $query_insert = mysqli_query($connection,"INSERT INTO ewmp VALUES (NULL,'$nip','$tahun',$pendidikan_prodi,$pendidikan_prodi_lain,$pendidikan_pt_luar,$penelitian,$pkm,$penunjang)");
 
                     if($query_insert){

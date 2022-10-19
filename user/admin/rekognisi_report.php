@@ -1,8 +1,33 @@
+
 <?php
-include "../../config/connection.php";
-header("Content-type: application/vnd.ms-excel");
-header("Content-Disposition: attachment; filename=rekognisi.xls");
-?>
+    $page = 'rekognisi_report';
+    $pages = 'report';
+    include "./partials/atas.php";
+?> 
+                  <div class="pcoded-content">
+                      <!-- Page-header start -->
+                      <div class="page-header">
+                          <div class="page-block">
+                              <div class="row align-items-center">
+                                  <div class="col-md-8">
+                                      <div class="page-header-title">
+                                          <h5 class="m-b-10">Rekognisi</h5>
+                                          <p class="m-b-0">Selamat datang di dashboard admin ProdiKU</p>
+                                      </div>
+                                  </div>
+                                  
+                              </div>
+                          </div>
+                      </div>
+                      <!-- Page-header end -->
+                        <div class="pcoded-inner-content">
+                            <!-- Main-body start -->
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <!-- Page-body start -->
+                                    <div class="page-body">
+                                        <a href="./export_rekognisi.php"><button class="btn btn-success waves-effect waves-light" style="margin-bottom:15px;">Export Excel</button></a>
+                                        <!-- Hover table card start -->
                                         <div class="card">
                                             <div class="card-header">
                                                 <h5>Daftar Rekognisi</h5>
@@ -70,4 +95,14 @@ header("Content-Disposition: attachment; filename=rekognisi.xls");
                                                 </div>
                                             </div>
                                         </div>
-                                        
+                                        <!-- Hover table card end -->
+                                    </div>
+                                    <!-- Page-body end -->
+                                </div>
+                                <div id="styleSelector"> </div>
+                            </div>
+                        </div>
+                    </div>
+<?php
+    include "./partials/bawah.php";
+?> 

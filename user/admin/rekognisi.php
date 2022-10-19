@@ -26,7 +26,6 @@
                                     <!-- Page-body start -->
                                     <div class="page-body">
                                         <a href="./tambah_rekognisi.php"><button class="btn btn-primary waves-effect waves-light" style="margin-bottom:15px;">Tambah Rekognisi</button></a> 
-                                        <a href="./export_rekognisi.php"><button class="btn btn-success waves-effect waves-light" style="margin-bottom:15px;">Export Excel</button></a>
                                         <!-- Hover table card start -->
                                         <div class="card">
                                             <div class="card-header">
@@ -68,29 +67,6 @@
                                                                     </tr>
                                                                 <?php
                                                             }
-
-                                                            $totalQuery = mysqli_query($connection,"SELECT COUNT(rekognisi.tahun) as totalTahun, rekognisi.*,dosen.* FROM rekognisi INNER JOIN dosen USING(nip) ORDER BY rekognisi.id DESC");
-                                                            $total = mysqli_fetch_assoc($totalQuery);
-
-                                                            $totalQuery2 = mysqli_query($connection,"SELECT COUNT(rekognisi.tingkat) as totalTingkat, rekognisi.*,dosen.* FROM rekognisi INNER JOIN dosen USING(nip) WHERE tingkat='wilayah' ORDER BY rekognisi.id DESC");
-                                                            $total2 = mysqli_fetch_assoc($totalQuery2);
-
-                                                            $totalQuery3 = mysqli_query($connection,"SELECT COUNT(rekognisi.tingkat) as totalTingkat, rekognisi.*,dosen.* FROM rekognisi INNER JOIN dosen USING(nip) WHERE tingkat='nasional' ORDER BY rekognisi.id DESC");
-                                                            $total3 = mysqli_fetch_assoc($totalQuery3);
-
-                                                            $totalQuery4 = mysqli_query($connection,"SELECT COUNT(rekognisi.tingkat) as totalTingkat, rekognisi.*,dosen.* FROM rekognisi INNER JOIN dosen USING(nip) WHERE tingkat='internasional' ORDER BY rekognisi.id DESC");
-                                                            $total4 = mysqli_fetch_assoc($totalQuery4);
-                                                            ?>
-                                                                <tr>
-                                                                    <td><strong>Jumlah</strong></td>
-                                                                    <td></td>
-                                                                    <td><strong>Wilayah : <?= $total2['totalTingkat'] ?></strong></td>
-                                                                    <td><strong>Nasional : <?= $total3['totalTingkat'] ?></strong></td>
-                                                                    <td><strong>Internasional : <?= $total4['totalTingkat'] ?></strong></td>
-                                                                    <td><strong>Total : <?= $total['totalTahun'] ?></strong></td>
-                                                                    <td></td>
-                                                                </tr>
-                                                            <?php
                                                         ?>
                                                         </tbody>
                                                     </table>

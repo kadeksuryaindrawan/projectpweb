@@ -27,7 +27,6 @@
                                     <!-- Page-body start --> 
                                     <div class="page-body">
                                         <a href="./tambah_dosen_industri.php"><button class="btn btn-primary waves-effect waves-light" style="margin-bottom:15px;">Tambah Dosen Industri</button></a> 
-                                        <a href="./export_dosen_industri.php"><button class="btn btn-success waves-effect waves-light" style="margin-bottom:15px;">Export Excel</button></a>
                                         <!-- Hover table card start -->
                                         <div class="card">
                                             <div class="card-header">

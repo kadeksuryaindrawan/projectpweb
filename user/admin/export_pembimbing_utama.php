@@ -16,7 +16,6 @@ header("Content-Disposition: attachment; filename=pemimbing_utama.xls");
                                                                 <th>Nama Dosen</th>
                                                                 <th>Prodi</th>
                                                                 <th>Jumlah Bimbingan</th>
-                                                                <th>Action</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -30,11 +29,6 @@ header("Content-Disposition: attachment; filename=pemimbing_utama.xls");
                                                                         <td><?=ucwords($data['nama_dosen'])?></td>
                                                                         <td><?=ucwords($data['nama_prodi'])?></td>
                                                                         <td><?=ucwords($data['jumlah_bimbingan'])?></td>
-                                                                        <td>
-                                                                        <a class="text-warning" href="./edit_pembimbing_utama.php?id=<?php echo $data['id'] ?>"><button class="btn btn-warning waves-effect waves-light" style="margin-bottom:15px;">Edit</button></a>
-                                                                        <a class="text-danger" href="./hapus_pembimbing_utama.php?id=<?php echo $data['id'] ?>" onclick = "return confirm('Yakin hapus pembimbing utama?')"><button class="btn btn-danger waves-effect waves-light" style="margin-bottom:15px;">Hapus</button></a>
-                                                                        
-                                                                        </td>
                                                                     </tr>
                                                                 <?php
                                                             }
