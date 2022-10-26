@@ -297,6 +297,13 @@
                                         </a>
                                     </li>
 
+                                    <li <?php if($page == "luaran_report") echo "class='active'";?>>
+                                        <a href="luaran_report.php" class="waves-effect waves-dark">
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Luaran DTPS</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+
                                   </ul>
                               </li>
 
@@ -361,7 +368,7 @@
                                       <span class="pcoded-mcaret"></span>
                                   </a>
                                   <ul class="pcoded-submenu">
-                                    <li <?php if($page == "dosen.php") echo "class='active'";?>>
+                                    <li <?php if($page == "dosen") echo "class='active'";?>>
                                         <a href="dosen.php" class="waves-effect waves-dark">
                                             <span class="pcoded-mtext" data-i18n="nav.form-components.main">Daftar Dosen</span>
                                             <span class="pcoded-mcaret"></span>
