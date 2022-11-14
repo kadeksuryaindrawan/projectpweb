@@ -114,9 +114,9 @@ $page = 'penelitian';
                                                             <label>Pilih Sumber Dana</label>
                                                                 <select name="sumber_dana" id="" class="form-control" required>
                                                                     <option value="">Pilih Sumber Dana</option>
-                                                                    <option value="DRPMDIKTI" <?php if($data['sumber_dana'] == "DRPMDIKTI") echo 'Selected';?>>DRPMDIKTI</option>
-                                                                    <option value="DIPA" <?php if($data['sumber_dana'] == "DIPA") echo 'Selected';?>>DIPA</option>
-                                                                    <option value="SWADANA" <?php if($data['sumber_dana'] == "SWADANA") echo 'Selected';?>>SWADANA</option>
+                                                                    <option value="PT/Mandiri" <?php if($data['sumber_dana'] == "PT/Mandiri") echo 'Selected';?>>DRPMDIKTI</option>
+                                                                    <option value="Dalam Negeri" <?php if($data['sumber_dana'] == "Dalam Negeri") echo 'Selected';?>>DIPA</option>
+                                                                    <option value="Luar Negeri" <?php if($data['sumber_dana'] == "Luar Negeri") echo 'Selected';?>>SWADANA</option>
                                                                 </select>
                                                                 <span class="form-bar"></span>
                                                                 

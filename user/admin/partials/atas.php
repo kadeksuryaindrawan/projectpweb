@@ -44,6 +44,7 @@
       <link rel="stylesheet" href="../../../css/fontawesome.min.css">
         <link rel="stylesheet" href="../../../css/all.min.css">
         <script src="../../assets/jquery/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="../assets/js/chart.js/chart.js"></script>
   </head>
 
   <body>
@@ -216,6 +217,12 @@
                                       <span class="pcoded-mcaret"></span>
                                   </a>
                                   <ul class="pcoded-submenu">
+                                  <li <?php if($page == "grafik") echo "class='active'";?>>
+                                        <a href="grafik.php" class="waves-effect waves-dark">
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Grafik</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
                                     <li <?php if($page == "dosen_tetap") echo "class='active'";?>>
                                         <a href="dosen_tetap.php" class="waves-effect waves-dark">
                                             <span class="pcoded-mtext" data-i18n="nav.form-components.main">Dosen Tetap</span>

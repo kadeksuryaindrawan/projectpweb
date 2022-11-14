@@ -88,9 +88,9 @@ $page = 'penelitian';
                                                             <label>Pilih Sumber Dana</label>
                                                                 <select name="sumber_dana" id="" class="form-control" required>
                                                                     <option value="">Pilih Sumber Dana</option>
-                                                                    <option value="DRPMDIKTI">DRPMDIKTI</option>
-                                                                    <option value="DIPA">DIPA</option>
-                                                                    <option value="SWADANA">SWADANA</option>
+                                                                    <option value="PT/Mandiri">PT/Mandiri</option>
+                                                                    <option value="Dalam Negeri">Dalam Negeri</option>
+                                                                    <option value="Luar Negeri">Luar Negeri/</option>
                                                                 </select>
                                                                 <span class="form-bar"></span>
                                                                 
